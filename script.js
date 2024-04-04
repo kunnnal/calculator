@@ -19,6 +19,8 @@ function Calculate() {
 
 function calculator(expression) {
   const operators = expression.split(/[0-9.]+/).filter((op) => op);
+  /*for evaluate simply the mathematichal expression    &
+   for remove any empty string from resulting array use filter*/
   const operands = expression.split(/[\+\-\*\/]/).map(Number);
 
   let result = operands[0];
@@ -39,7 +41,7 @@ function calculator(expression) {
         break;
       case "/":
         if (nextOperand === 0) {
-          throw new error("undefine");
+          throw new error("undefine"); // -------------------
         }
         result /= nextOperand;
         break;
@@ -50,8 +52,11 @@ function calculator(expression) {
 
   return result;
 }
+// end of result function
+// =======================
+// start of square root function
 function Sqrt() {
-  console.log("Sqrt");
+  // console.log("Sqrt");
   const value = parseFloat(input.value);
   if (value >= 0) {
     const sqrtResult = Math.sqrt(value);
@@ -60,3 +65,5 @@ function Sqrt() {
     input.value = " ";
   }
 }
+// end of square root function
+// ===========================
